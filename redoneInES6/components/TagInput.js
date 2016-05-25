@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import Suggestions from './Suggetions';
 
 class TagInput extends Component{
 
@@ -9,12 +10,14 @@ class TagInput extends Component{
 
 
     render() {
+
+        console.log(this.props);
         return (
-            <div className={this.state.classNames.tagInput}>
+            <div className="ReactTags__tagInput">
                 <input ref="input"
                        type="text"
-                       placeholder={this.props.placeholder}
-                       aria-label={this.props.placeholder}
+                       placeholder='Add new tag'
+                       aria-label='Add new tag'
                        onChange={this.handleChange}
                        onKeyDown={this.handleKeyDown}/>
                 <Suggestions query={this.props.query}

@@ -32,13 +32,21 @@ class Suggestions extends Component {
         return (props.query.length >= minQueryLength);
     }
 
+    handleClick(){
+
+    }
+
+    handleHover(){
+
+    }
+
     render() {
         var props = this.props;
         var suggestions = this.props.suggestions.map(function (item, i) {
             return (
                 <li key={i}
-                    onClick={props.handleClick.bind(null, i) }
-                    onMouseOver={props.handleHover.bind(null, i) }
+                    onClick={this.handleClick.bind(null, i) }
+                    onMouseOver={this.handleHover.bind(null, i) }
                     className={i == props.selectedIndex ? "active" : ""}>
                     <span dangerouslySetInnerHTML={this.markIt(item, props.query) }/>
                 </li>

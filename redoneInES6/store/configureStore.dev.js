@@ -4,10 +4,9 @@ import createLogger from 'redux-logger'
 import rootReducer from '../reducers/index'
 // import DevTools from '../../../common/DevTools'
 
-export default function configureStore(initialState) {
+export default function configureStore() {
   const store = createStore(
     rootReducer,
-    initialState,
     compose(
       applyMiddleware(thunk, createLogger({ collapsed: true })),
      // DevTools.instrument()

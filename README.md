@@ -1,4 +1,4 @@
-### React-Tags-ES6 -Created from : [![NPM](https://nodei.co/npm/react-tag-input.png?downloads=true)](https://www.npmjs.com/package/react-tag-input)
+### React-Tags-ES6 -Created from : [![NPM](https://nodei.co/npm/react-tag-input-es6.png?downloads=true)](https://www.npmjs.com/package/react-tag-input-es6)
 
 This Package has been modified to suit my needs. Was not working with Modular imports / ES6 Imports.
 
@@ -23,63 +23,13 @@ Check it out [here](http://prakhar.me/react-tags/example)
 The preferred way of using the component is via NPM
 
 ```
-npm install --save react-tag-input
+npm install --save react-tag-input-es6
 ```
 It is, however, also available to be used separately (`dist/ReactTags.min.js`). If you prefer this method remember to include [ReactDND](https://github.com/gaearon/react-dnd) as a dependancy. Refer to the [demo](http://prakhar.me/react-tags/example) to see how this works.
 
 ### Usage
 
-Here's a sample implementation that initializes the component with a list of initial `tags` and `suggestions` list. Apart from this, there are multiple events, handlers for which need to be set. For more details, go through the [API](#Options).
-
-```javascript
-var ReactTags = require('react-tag-input').WithContext;
-
-var App = React.createClass({
-    getInitialState: function() {
-        return {
-            tags: [ {id: 1, text: "Apples"} ],
-            suggestions: ["Banana", "Mango", "Pear", "Apricot"]
-        }
-    },
-    handleDelete: function(i) {
-        var tags = this.state.tags;
-        tags.splice(i, 1);
-        this.setState({tags: tags});
-    },
-    handleAddition: function(tag) {
-        var tags = this.state.tags;
-        tags.push({
-            id: tags.length + 1,
-            text: tag
-        });
-        this.setState({tags: tags});
-    },
-    handleDrag: function(tag, currPos, newPos) {
-        var tags = this.state.tags;
-
-        // mutate array
-        tags.splice(currPos, 1);
-        tags.splice(newPos, 0, tag);
-
-        // re-render
-        this.setState({ tags: tags });
-    },
-    render: function() {
-        var tags = this.state.tags;
-        var suggestions = this.state.suggestions;
-        return (
-            <div>
-                <ReactTags tags={tags}
-                    suggestions={suggestions}
-                    handleDelete={this.handleDelete}
-                    handleAddition={this.handleAddition}
-                    handleDrag={this.handleDrag} />
-            </div>
-        )
-    }
-});
-
-React.render(<App />, document.getElementById('app'));
+```
 ```
 
 **A note about `Contexts`**
@@ -188,7 +138,7 @@ Optional boolean param to control whether the text-input should be autofocused o
 ```js
 <ReactTags
     autofocus={false}
-    ...>        
+    ...>
 ```
 
 <a name="allowDeleteFromEmptyInput"></a>
@@ -256,7 +206,7 @@ This option has no effect if there are no [`suggestions`](#suggestionsOption).
 Renders the component in read-only mode without the input box and `removeComponent`. This also disables the drag-n-drop feature.
 
 ### Styling
-`<ReactTags>` does not come up with any styles. However, it is very easy to customize the look of the component the way you want it. By default, the component provides the following classes with which you can style - 
+`<ReactTags>` does not come up with any styles. However, it is very easy to customize the look of the component the way you want it. By default, the component provides the following classes with which you can style -
 
 - `ReactTags__tags`
 - `ReactTags__tagInput`
