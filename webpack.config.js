@@ -2,24 +2,23 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-    entry: "./lib/reactTagsES6.js",
+    context: __dirname,
+    entry: "./redoneInES6/TagsInput.js",
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loader: 'babel',
-                include: path.join(__dirname, 'lib')
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'es2015']
+                }
             }
         ]
     },
-    externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        'react-dnd': 'ReactDnD'
-    },
     output: {
-        filename: "dist/ReactTagsES6.min.js",
-        libraryTarget: 'umd',
-        library: 'ReactTags'
+        path: __dirname + "/dist",
+        filename: "reactTags.js"
+
     }
 };

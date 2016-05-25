@@ -1,57 +1,14 @@
 {
-  "_args": [
-    [
-      "react-tag-input",
-      "/Users/david/repo/admin"
-    ]
-  ],
-  "_from": "react-tag-input-es6@latest",
-  "_id": "react-tag-input-es6@0.0.1",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/react-tag-input-es6",
-  "_nodeVersion": "6.1.0",
-  "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/react-tag-input-es6-tmp.tgz_1464133871057_0.49416875769384205"
-  },
-  "_npmUser": {
-    "email": "davidjm204@gmail.com",
-    "name": "djm204"
-  },
-  "_npmVersion": "3.8.6",
-  "_phantomChildren": {
-    "fbjs": "0.8.1",
-    "loose-envify": "1.1.0"
-  },
-  "_requested": {
-    "name": "react-tag-input-es6",
-    "raw": "react-tag-input-es6",
-    "rawSpec": "",
-    "scope": null,
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-tag-input/-/react-tag-input-3.0.0.tgz",
-  "_shasum": "52fc4e39bd583df815ae29c155513b840a303116",
-  "_shrinkwrap": null,
-  "_spec": "react-tag-input",
-  "_where": "/Users/david/repo/admin",
-  "author": {
-    "name": "Prakhar Srivastav"
-  },
-  "bugs": {
-    "url": "https://github.com/prakhar1989/react-tags/issues"
-  },
   "dependencies": {
+    "immutable": "^3.8.1",
     "lodash": "^4.12.0",
     "react": "^15.1.0",
     "react-dnd": "^2.0.2",
     "react-dnd-html5-backend": "^2.0.0",
-    "react-dom": "^15.1.0"
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   },
   "description": "React tags is a fantastically simple tagging component for your React projects",
   "devDependencies": {
@@ -66,6 +23,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "directories": {},
+  "homepage": "https://github.com/djm204/tags-input-es6#readme",
   "keywords": [
     "react",
     "drag-drop",
@@ -75,18 +33,12 @@
     "autosuggest"
   ],
   "license": "MIT",
-  "main": "dist-modules/reactTagsES6.js",
-  "maintainers": [
-    {
-      "email": "davidjm204@gmail.com",
-      "name": "djm204"
-    }
-  ],
-  "name": "react-tag-input-es6",
+  "main": "dist-modules/TagsInputES6.js",
+  "name": "tags-input-es6",
   "optionalDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djm204/react-tags-es6.git"
+    "url": "git+https://github.com/djm204/tags-input-es6.git"
   },
   "scripts": {
     "build": "webpack -p && babel lib --out-dir dist-modules",
